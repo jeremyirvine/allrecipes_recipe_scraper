@@ -20,9 +20,9 @@ browser.get("https://allrecipes.com/recipes")
 
 elem = browser.find_element_by_tag_name("body")
 
-page_limit = 250
+page_start = 250
 
-page_up_limit = 200
+page_end = 200
 
 page_rec_density = 20
 
@@ -32,9 +32,9 @@ href_arr = []
 
 last_density = 0;
 
-while (page_limit > 0 and page_limit != page_up_limit):
+while (page_start > 0 and page_start != page_end):
     
-    browser.get("https://allrecipes.com/recipes/?page=" + str(page_limit))
+    browser.get("https://allrecipes.com/recipes/?page=" + str(page_start))
     last_url = ""
     hrefs = browser.find_elements_by_xpath("//a[contains(@href,'/recipe/')]")
     counter = 0
@@ -97,7 +97,7 @@ while (page_limit > 0 and page_limit != page_up_limit):
         print("Finished (" + url + ")\n")
         counter2+=1
     last_density = counter
-    page_limit-=1
+    page_start-=1
     href_arr = []
     iteration += 1
 #resp = urllib.urlopen('http://allrecipes.com/') # open url
