@@ -14,7 +14,7 @@ from os.path  import basename
 final = []
 # ================
 
-browser = webdriver.Chrome("D:\Program Files\chromedriver_win32\chromedriver.exe")
+browser = webdriver.Chrome("C:\Program Files\chromedriver\chromedriver.exe")
 
 browser.get("https://allrecipes.com/recipes")
 
